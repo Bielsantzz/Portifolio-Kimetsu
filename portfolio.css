@@ -1,238 +1,69 @@
-/* ==========================================
-   1. RESET GLOBAL (Limpa as configurações padrão do navegador)
-   ========================================== */
-* {
-    margin: 0; /* Remove a margem externa padrão de todos os elementos */
-    padding: 0; /* Remove o espaçamento interno padrão */
-    box-sizing: border-box; /* Garante que bordas e preenchimentos não quebrem o tamanho das caixas */
-    scroll-behavior: smooth; /* Deixa a rolagem suave ao clicar nos links do menu */
+html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* ==========================================
-   2. ESTILO DO CORPO DO SITE (Fundo e Fonte)
-   ========================================== */
 body {
-    /* Cria um fundo escuro profundo com uma pegada futurista/cyberpunk */
-    background: linear-gradient(135deg, #090d16 0%, #0d0617 50%, #051019 100%);
-    background-attachment: fixed; /* Mantém o fundo fixo no lugar enquanto você rola a página */
-    color: #ffffff; /* Define a cor padrão de todos os textos como branco */
-    font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes padrão */
-    line-height: 1.6; /* Melhora o espaçamento entre as linhas de texto */
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* ==========================================
-   3. CABEÇALHO E MENU DE NAVEGAÇÃO
-   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
-    background-color: rgba(87, 16, 185, 0.85); /* Fundo escuro translúcido */
-    backdrop-filter: blur(10px); /* Efeito de vidro embaçado/fosco moderno */
-    padding: 20px; /* Espaçamento interno */
-    position: fixed; /* Fixa o menu no topo para acompanhar a rolagem */
-    top: 0; /* Cola no topo da tela */
-    width: 100%; /* Ocupa toda a largura da tela */
-    z-index: 1000; /* Garante que fique sempre por cima de tudo */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linha sutil embaixo */
+    background-color: #000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-nav ul {
-    display: flex; /* Alinha os itens do menu lado a lado */
-    justify-content: center; /* Centraliza o menu no meio */
-    list-style: none; /* Remove as bolinhas da lista */
-    gap: 35px; /* Espaçamento entre os links */
-}
-
-nav ul li a {
-    color: #cbd5e1; /* Cor cinza clara para os links */
-    text-decoration: none; /* Remove o sublinhado do link */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 15px; /* Tamanho da fonte */
-    transition: 0.3s ease; /* Transição suave de cor */
-}
-
-nav ul li a:hover {
-    color: #ff007f; /* Muda para o rosa/magenta neon ao passar o mouse */
-    text-shadow: 0 0 10px rgba(255, 0, 127, 0.6); /* Brilho neon no texto */
-}
-
-/* ==========================================
-   4. ESTRUTURA GERAL DAS SEÇÕES
-   ========================================== */
-main {
-    padding-top: 100px; /* Empurra o conteúdo para baixo para não ficar debaixo do menu fixo */
-}
-
-section {
-    padding: 80px 20px; /* Espaçamento interno das seções */
-    text-align: center; /* Centraliza os textos por padrão */
-    max-width: 900px; /* Largura máxima para o conteúdo não esticar demais */
-    margin: 0 auto; /* Centraliza a seção na tela */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Linha discreta separando as seções */
-}
-
-section h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #f8fafc;
-}
-
-/* ==========================================
-   5. SEÇÃO INÍCIO (HERO)
-   ========================================== */
-#inicio {
-    display: flex;
-    flex-direction: column; /* Empilha os elementos um abaixo do outro */
-    align-items: center; /* Centraliza horizontalmente */
-    gap: 15px; /* Espaço entre os elementos internos */
-}
-
-#inicio h1 {
-    font-size: 52px;
-    font-weight: bold;
-    /* Degradê neon futurista nas letras do nome */
-    background: linear-gradient(90deg, #ff007f 0%, #7928ca 50%, #00f2fe 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(255, 0, 127, 0.4)); /* Brilho neon ao redor do nome */
-}
-
-#inicio p {
-    font-size: 16px;
-    color: #94a3b8;
-}
-
-/* Estilização do Botão de Currículo */
-.botoes {
-    margin-top: 10px;
-}
-
-.botoes a {
-    background: linear-gradient(135deg, #7928ca 0%, #ff007f 100%); /* Degradê roxo para rosa neon */
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px; /* Cantos arredondados */
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4); /* Efeito de brilho neon (Glow) */
-    display: inline-block;
-    transition: 0.3s ease;
-}
-
-.botoes a:hover {
-    transform: scale(1.05); /* Dá um leve zoom ao passar o mouse */
-    box-shadow: 0 0 30px rgba(255, 0, 127, 0.7); /* Intensifica o brilho */
-}
-
-/* Estilização da Foto de Perfil Redonda */
-#inicio img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* Transforma a foto em um círculo perfeito */
-    object-fit: cover; /* Evita que a foto fique esticada */
-    border: 4px solid #ff007f; /* Borda rosa neon */
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4); /* Brilho neon na foto */
-    margin-top: 20px;
-}
-
-/* ==========================================
-   6. SEÇÃO SOBRE MIM
-   ========================================== */
-#sobre-mim p {
-    background: rgba(30, 41, 59, 0.5); /* Fundo translúcido estilo vidro escuro */
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 15px;
-    color: #cbd5e1;
-    text-align: left; /* Texto alinhado à esquerda para facilitar a leitura */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* ==========================================
-   7. SEÇÃO TECNOLOGIAS E FERRAMENTAS
-   ========================================== */
-.tools-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os cards vão para a linha de baixo se faltar espaço */
-    justify-content: center;
-    gap: 20px; /* Espaço entre os cards */
-    margin-top: 20px;
-}
-
-.tools-card {
-    background: rgba(30, 41, 59, 0.7); /* Fundo translúcido */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 12px;
-    width: 90px;
-    height: 90px;
+.navegacao-principal {
+    width: 100%;
+    max-width: 1440px;
+    height: 100px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
+    justify-content: space-between; 
+    padding: 0 40px;
 }
 
-.tools-card:hover {
-    transform: translateY(-8px); /* Joga o card levemente para cima */
-    border-color: #ff007f; /* Muda a borda para rosa neon */
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4); /* Brilho neon no card */
+/* Estilização da Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-.tools-card img {
-    width: 45px;
-    height: 45px;
+.logo-img {
+    height: 100px;
+    width: auto;
     object-fit: contain;
 }
 
-/* ==========================================
-   8. SEÇÃO SKILLS (CARROSSEL)
-   ========================================== */
-.carrosel-container {
+.menu-navegacao {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 35px;
+    list-style: none;
 }
 
-.carrosel-track-container {
-    overflow: hidden; /* Esconde o que passa para fora da caixa do carrossel */
-    width: 420px;
+.menu-navegacao li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-.carrosel-track {
-    display: flex;
-    transition: transform 0.4s ease-in-out; /* Suaviza o movimento ao trocar de card */
+.menu-navegacao li a:hover {
+    color: #945ad6;
 }
 
-.carrosel-card {
-    min-width: 420px;
-    background: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.carrosel-card h3 {
-    color: #ff007f; /* Cor de destaque rosa neon no título da skill */
-}
-
-.carrosel-btn {
-    background: linear-gradient(135deg, #7928ca 0%, #ff007f 100%);
-    color: white;
-    border: none;
-    font-size: 16px;
-    padding: 12px 16px;
-    cursor: pointer;
-    border-radius: 50%; /* Deixa o botão de avançar/voltar redondinho */
-    margin: 0 15px;
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
-    transition: 0.3s;
-}
-
-.carrosel-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
-}
