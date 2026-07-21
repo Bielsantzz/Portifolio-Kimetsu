@@ -3,69 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Santos | portifólio</title>
+    <title>Gabriel Santos | Portfólio</title>
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
     
     <header> 
-
         <nav>
             <ul>
+                <!-- IDs padronizados sem espaços, acentos ou letras maiúsculas -->
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#Sobre Mim">Sobre mim</a></li>
-                <li><a href="#Tecnologias">Tecnologias</a></li>
-                <li><a href="#Skils">Skills</a></li>
-                <li><a href="#Experiencias">Experiências</a></li>
-                <li><a href="#Contatos">Contatos</a></li>
+                <li><a href="#sobre-mim">Sobre mim</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experiencias">Experiências</a></li>
+                <li><a href="#contatos">Contatos</a></li>
             </ul>
         </nav>
-      
     </header>
-
 
     <main>
 
-        <section id="Início">
-
+        <!-- SEÇÃO INÍCIO -->
+        <section id="inicio">
             <p>Olá, Meu nome é</p>
             <h1>Gabriel Santos</h1>
             <p>Desenvolvedor Web | FrontEnd - UI/UX</p>
-
-            <div class="minha-foto">
-                <img src="fotominha.jpg" alt="eu">
+            
+            <div class="botoes">
+                <a href="#">Baixar Currículo</a>
             </div>
 
+            <figure>
+                <img src="assets/fotominha.jpg" alt="Minha Foto">
+            </figure>
         </section>
 
-        <section id="Sobre Mim">
-            <p>"Olá, eu sou o Gabriel Santos. Sou um desenvolvedor focado na criação de experiências digitais que unem lógica e estética.
-            Tenho um interesse especial pelo design de interfaces, tendo trabalhado no desenvolvimento de layouts gráficos detalhados — como sistemas de interfaces
-            veiculares com componentes interativos — e na criação de artes digitais. Minha abordagem combina o rigor técnico da programação com a preocupação de manter
-            uma identidade visual consistente em todos os meus projetos. Estou sempre em busca de novos desafios que permitam unir tecnologia e design de forma
-            criativa e funcional."</p>
-
-
+        <!-- SEÇÃO SOBRE MIM -->
+        <section id="sobre-mim">
+            <p>
+                "Olá, eu sou o Gabriel Santos. Sou um desenvolvedor focado na criação de experiências digitais que unem lógica e estética.
+                Tenho um interesse especial pelo design de interfaces, tendo trabalhado no desenvolvimento de layouts gráficos detalhados — como sistemas de interfaces
+                veiculares com componentes interativos — e na criação de artes digitais. Minha abordagem combina o rigor técnico da programação com a preocupação de manter
+                uma identidade visual consistente em todos os meus projetos. Estou sempre em busca de novos desafios que permitam unir tecnologia e design de forma
+                criativa e funcional."
+            </p>
         </section>
 
-        <section id="Tecnologias">
+        <!-- SEÇÃO TECNOLOGIAS (Todas dentro de um único container) -->
+        <section id="tecnologias">
+            <h2>Tecnologias</h2>
 
+            <div class="tools-container">
+                <div class="tools-card">
+                    <img src="assets/html-icon.png" alt="HTML5">
+                </div>
+
+                <div class="tools-card">
+                    <img src="assets/css-icon.png" alt="CSS3">
+                </div>
+
+                <div class="tools-card">
+                    <img src="assets/js-icon.png" alt="JavaScript">
+                </div>
+
+                <div class="tools-card">
+                    <img src="assets/flutter-icon.png" alt="Flutter">
+                </div>
+
+                <div class="tools-card">
+
+                    <img src="assets/figma-icon.png" alt="Figma">
+                </div>
+
+                <div class="tools-card">
+                    <img src="assets/react.png" alt="React">
+                </div>
+                
+                <div class="tools-card">
+                    <img src="assets/python-icon.png" alt="Python">
+                </div>
+
+            </div>
         </section>
 
-        <section id="Skills">
+        <!-- SEÇÃO SKILLS (Estrutura do Carrossel) -->
+        <section id="skills">
+            <h2>Soft Skills</h2>
 
+            <div class="carrosel-container">
+                <button id="BtnEsq" class="carrosel-btn">&#10094;</button>
+
+                <div class="carrosel-track-container">
+                    <div class="carrosel-track">
+                        <div class="carrosel-card">
+                            <h3>Comunicação</h3>
+                        </div>
+
+                        <div class="carrosel-card">
+                            <h3>Trabalho em Equipe</h3>
+                        </div>
+
+                        <div class="carrosel-card">
+                            <h3>Pensamento Crítico</h3>
+                        </div>
+
+                        <div class="carrosel-card">
+                            <h3>Aprendizado Contínuo</h3>
+                        </div>
+
+                        <div class="carrosel-card">
+                            <h3>Resiliência</h3>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button id="BtnDrt" class="carrosel-btn">&#10095;</button>
+            </div>
         </section>
 
-        <section id="Experiências">
-
+        <!-- SEÇÃO EXPERIÊNCIAS -->
+        <section id="experiencias">
+            <h2>Experiências</h2>
         </section>
 
-
-        <section id="Contatos">
-
+        <!-- SEÇÃO CONTATOS -->
+        <section id="contatos">
+            <h2>Contatos</h2>
         </section>
+
     </main>
-
-
 
 </body>
 </html>
