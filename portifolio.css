@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(63, 63, 63);
+    color: #FDFCFA;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   HEADER
+================================= */
+
+.meu-cabecalho {
+    background-color: #050204;
+
+    width: 100%;
+    height: 95px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #1b4d3e;
+}
+
+
+/* ==============================
+   NAVEGAÇÃO
+================================= */
+
+.barra-nav {
+    width: 500px;
+    max-width: 1000px;
+    height: 90px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+}
+
+
+/* ==============================
+   LOGO
+================================= */
+
+.logo-img {
+    height: 75px;
+    width: auto;
+
+    object-fit: contain;
+
+    order: 2;
+}
+
+
+/* ==============================
+   MENU
+================================= */
+
+.menu-lista {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+
+    order: 1;
+}
+
+.menu-lista li a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    transition: color 0.3s ease;
+}
+
+.menu-lista li a:hover {
+    color: #f769eb;
+}
+
+
+/* ==============================
+   LANTERNAS
+   MANTIDAS COMO ESTAVAM
+================================= */
+
+.lampada {
+    position: absolute;
+
+    top: 72px;
+
+    width: 45px;
+    height: 75px;
+
+    z-index: 2000;
+
+    pointer-events: none;
+}
+
+.lampada img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.lampada-esquerda {
+    left: 15px;
+}
+
+.lampada-direita {
+    right: 15px;
+}
+
+
+/* ==============================
+   MAIN
+================================= */
+
+main {
+    padding-top: 95px;
+}
+
+
+/* ==============================
+   SEÇÃO INICIAL
+================================= */
+
+.inicio {
+    min-height: calc(100vh - 95px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* ==============================
+   MOLDURA DA FOTO
+================================= */
+
+.moldura-foto {
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   FOTO
+================================= */
+
+.minha-foto {
+    width: 78%;
+    height: 78%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    z-index: 1;
+}
+
+
+/* ==============================
+   MOLDURA
+================================= */
+
+.moldura {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    object-fit: contain;
+}
+
+
+/* ==============================
+   TEXTOS DA INICIAL
+================================= */
+
+.inicio h1 {
+    font-size: 2.5rem;
+
+    margin-bottom: 10px;
+}
+
+.inicio p {
+    font-size: 1.1rem;
+
+    color: #d8d8d8;
+}

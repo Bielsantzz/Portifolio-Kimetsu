@@ -1,52 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gabriel Santos | Portfólio Extravagante</title>
+    <title>Meu Portfólio</title>
 
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portifolio.css">
 </head>
 
 <body>
 
-    <header>
+    <!-- HEADER -->
 
-        <nav class="navegacao-principal">
+        <header class="meu-cabecalho">
 
-            <ul class="menu-navegacao">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre-mim">Sobre mim</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experiencias">Experiências</a></li>
-                <li><a href="#contatos">Contatos</a></li>
-            </ul>
+        <nav class="barra-nav">
 
-            <a href="#inicio" class="logo-link">
-                <img src="assets/logo.png"alt="GS - Logo" class="logo-img">
+            <a href="#inicio">
+                <img src="assets/Logo.png" alt="Logo"class="logo-img">
             </a>
 
-            <div class=" lanterna lanterna-direita">
-                <img src="assets/Lanternas.png" alt="">
-            </div>
-
-            <div class=" lanterna lanterna-esquerda">
-                <img src="assets/Lanternas.png" alt="">
-            </div>
-
+            <ul class="menu-lista">
+                <li><a href="#inicio">INÍCIO</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#projetos">PROJETOS</a></li>
+                <li><a href="#habilidades">HABILIDADES</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+            </ul>
         </nav>
+
+
+        <!-- LANTERNAS ABAIXO DA NAV -->
+
+        <div class="lampada lampada-esquerda">
+            <img src="assets/Lanternas.png" alt="Lanterna esquerda">
+        </div>
+
+        <div class="lampada lampada-direita">
+            <img src="assets/Lanternas.png" alt="Lanterna direita">
+        </div>
+
     </header>
+
+
+    <!-- CONTEÚDO -->
 
     <main>
 
-        <section id="inicio" class="inicio">
+        <!-- INÍCIO -->
 
-            <h1>Meu Portfólio</h1>
+        <section class="inicio" id="inicio">
 
-            <p>Desenvolvedor e criador de projetos.</p>
+            <div class="moldura-foto">
+
+                <img 
+                    src="img/minha-foto.jpg" 
+                    alt="Minha foto" 
+                    class="minha-foto"
+                >
+
+                <img 
+                    src="img/moldura.png" 
+                    alt="Moldura decorativa" 
+                    class="moldura"
+                >
+
+            </div>
+
+            <h1>Olá, eu sou Gabriel!</h1>
+
+            <p>
+                Desenvolvedor e apaixonado por tecnologia.
+            </p>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section id="sobre">
+
+            <h2>Sobre mim</h2>
+
+            <p>
+                Aqui você pode colocar uma descrição sobre você,
+                sua trajetória e seus objetivos.
+            </p>
+
+        </section>
+
+
+        <!-- PROJETOS -->
+
+        <section id="projetos">
+
+            <h2>Projetos</h2>
+
+            <div>
+
+                <h3>Projeto 1</h3>
+
+                <p>
+                    Descrição do seu projeto.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Projeto 2</h3>
+
+                <p>
+                    Descrição do seu projeto.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+
+        <section id="habilidades">
+
+            <h2>Habilidades</h2>
+
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>JavaScript</p>
+            <p>React</p>
+            <p>Python</p>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section id="contato">
+
+            <h2>Contato</h2>
+
+            <p>
+                Entre em contato comigo.
+            </p>
 
         </section>
 
