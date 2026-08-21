@@ -30,7 +30,7 @@ body {
     background-color: #050204;
 
     width: 100%;
-    height: 95px;
+    height: 75px;
 
     position: fixed;
     top: 0;
@@ -47,9 +47,9 @@ body {
 ================================= */
 
 .barra-nav {
-    width: 500px;
-    max-width: 1000px;
-    height: 90px;
+    width: 100%;
+    max-width: 1200px;
+    height: 80px;
 
     margin: 0 auto;
 
@@ -60,44 +60,36 @@ body {
     padding: 0 30px;
 }
 
-
-/* ==============================
-   LOGO
-================================= */
+.link-logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
 
 .logo-img {
-    height: 75px;
+    height: 80px;
     width: auto;
-
     object-fit: contain;
-
-    order: 2;
 }
 
 
 /* ==============================
-   MENU
+   MENU (Esquerda)
 ================================= */
 
 .menu-lista {
     display: flex;
     align-items: center;
-
-    gap: 30px;
-
+    gap: 50px;
     list-style: none;
-
-    order: 1;
 }
 
 .menu-lista li a {
     color: #ffffff;
-
     text-decoration: none;
-
     font-weight: 700;
-    font-size: 0.9rem;
-
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -106,21 +98,12 @@ body {
 }
 
 
-/* ==============================
-   LANTERNAS
-   MANTIDAS COMO ESTAVAM
-================================= */
-
 .lampada {
     position: absolute;
-
     top: 72px;
-
-    width: 45px;
-    height: 75px;
-
+    width: 70px;
+    height: 100px;
     z-index: 2000;
-
     pointer-events: none;
 }
 
@@ -145,7 +128,7 @@ body {
 ================================= */
 
 main {
-    padding-top: 95px;
+    padding-top: 115px;
 }
 
 
@@ -155,16 +138,13 @@ main {
 
 .inicio {
     min-height: calc(100vh - 95px);
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
-
-    text-align: center;
-
+    gap: 50px;
     padding: 20px;
+    flex-direction: row-reverse;
 }
 
 
@@ -174,14 +154,11 @@ main {
 
 .moldura-foto {
     position: relative;
-
-    width: 500px;
-    height: 500px;
-
+    width: 400px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 20px;
 }
 
@@ -193,13 +170,9 @@ main {
 .minha-foto {
     width: 78%;
     height: 78%;
-
     border-radius: 50%;
-
     object-fit: cover;
-
     position: absolute;
-
     z-index: 1;
 }
 
@@ -211,16 +184,11 @@ main {
 .moldura {
     width: 100%;
     height: 100%;
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     z-index: 2;
-
     pointer-events: none;
-
     object-fit: contain;
 }
 
@@ -229,14 +197,26 @@ main {
    TEXTOS DA INICIAL
 ================================= */
 
+.inicio{
+    min-height: calc(100vh - 95px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Espaço entre a foto e o texto */
+    padding: 40px 50px;
+    flex-direction: row-reverse;
+}
+
+.inicio{
+    text-align: left;
+}
+
 .inicio h1 {
     font-size: 2.5rem;
-
     margin-bottom: 10px;
 }
 
 .inicio p {
     font-size: 1.1rem;
-
     color: #d8d8d8;
 }
