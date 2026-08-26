@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="portifolio.css">
 </head>
 
+
 <body>
 
     <header class="meu-cabecalho">
@@ -35,6 +36,8 @@
     </header>
 
     <main>
+
+         <!-- SEÇÃO  -->
         <section class="inicio" id="inicio">
             <div class="moldura-foto">
                 <img src="assets/fotominha.jpg" alt="Minha foto" class="minha-foto">
@@ -48,30 +51,51 @@
             </div>
         </section>
 
-        <!-- SEÇÃO SOBRE (Espadas movidas para a section para alinhar com o fundo) -->
+
+       <!-- SEÇÃO SOBRE -->
         <section class="sobre" id="sobre">
-            
-            <div class="sobre-caixa"> 
+
+            <div class="espadas-fundo">
                 <img src="assets/inosuke_sword.png" alt="espada-esquerda" class="espada espada-esquerda">
                 <img src="assets/inosuke_sword2.png" alt="espada-direita" class="espada espada-direita">
-                <div class="sobre-conteudo">
-                    <h2>Sobre mim</h2>
-                    <p>Aqui você pode colocar uma descrição sobre você, sua trajetória e seus objetivos.</p>
-                </div>
+            </div>
+ 
+            <h2 class="titulo-sobre">Sobre mim</h2>
+
+            <div class="sobre-conteudo">
+                <p> 
+                    Olá, meu nome é Gabriel Henrique. Sou um jovem estudante de programação que vem adquirindo experiência e se desenvolvendo cada dia mais na área da tecnologia.
+                    Busco aprender novas tecnologias, aprimorar minhas habilidades e transformar ideias em projetos. Minha experiência dentro desse novo mundo é sempre enriquecedora, pois a tecnologia é repleta de caminhos e possibilidades infinitas. 
+                </p>
+
+                <p>
+                    Gosto de explorar diferentes áreas, descobrir novas formas de criar e entender como as coisas funcionam. Cada projeto que desenvolvo me proporciona um novo aprendizado e me ajuda a enxergar a tecnologia de uma maneira diferente. 
+                    Meu objetivo é continuar evoluindo, ampliar meus conhecimentos e transformar cada novo desafio em uma oportunidade de crescimento.
+                </p>
             </div>
         </section>
 
         <!-- SEÇÃO PROJETOS -->
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <div>
-                <h3>Projeto 1</h3>
-                <p>Descrição do seu projeto.</p>
+        <section class="projetos" id="projetos">
+
+            <h2> Meus Projetos</h2>
+
+            <div class="carrossel">
+                <button class="seta seta-esquerda">❮</button>
+                
+                <div class="projeto-card" id="projeto-1">
+                    <h3>Rebuild</h3>
+                    <p>Descrição do seu projeto.</p>
+                </div>
+                
+                <div class="projeto-card" id="projeto-2">
+                    <h3>The Last of Us</h3>
+                    <p>Descrição do seu projeto.</p>
+                </div>
+                
+                <button class="seta seta-direita">❯</button>
             </div>
-            <div>
-                <h3>Projeto 2</h3>
-                <p>Descrição do seu projeto.</p>
-            </div>
+
         </section>
 
         <!-- HABILIDADES -->
@@ -92,6 +116,7 @@
     </main>
 
 
+        <script src="portifolio.js"></script>
 </body>
 
 </html>

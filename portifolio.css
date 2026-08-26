@@ -17,6 +17,10 @@ body {
     min-height: 100vh;
 }
 
+/* ==============================
+   NAV BAR, LINKS, LOGO E LAMPADAS 
+================================= */
+
 .meu-cabecalho {
     background-color: #000000;
     width: 100%;
@@ -104,6 +108,10 @@ main {
     padding-top: 115px;
 }
 
+/* ==============================
+    TITULO "OLÁ"
+================================= */
+
 .inicio {
     min-height: calc(100vh - 95px);
     width: 100%;
@@ -115,9 +123,9 @@ main {
     box-sizing: border-box;
     flex-direction: row-reverse;
     text-align: left;
+    transform: translateY(-20px);
 }
 
-/*titulo Olá*/
 .inicio h1 {
     font-size: 3.8rem;
     margin-bottom: 15px;
@@ -145,19 +153,8 @@ main {
     color: #ffffff;
 }
 
-.efeito-trovao {
-    position: absolute;
-    left: -230px;
-    top: 120px;
-    transform: translateY(-50%);
-    width: 250px;
-    height: auto;
-    object-fit: contain;
-    pointer-events: none;        
-}
-
 /* ==============================
-   MOLDURA DA FOTO
+   MOLDURA DA FOTO e EFEITOS 
 ================================= */
 
 .moldura-foto {
@@ -190,6 +187,18 @@ main {
     object-fit: contain;
 }
 
+.efeito-trovao {
+    position: absolute;
+    left: -230px;
+    top: 120px;
+    transform: translateY(-50%);
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none; 
+    opacity: 0.45;       
+}
+
 .efeito-agua {
     position: absolute;
     top: 400px;         
@@ -198,7 +207,7 @@ main {
     height: auto;
     z-index: 3;
     pointer-events: none;
-    opacity: 0.75;
+    opacity: 0.45;
 }
 
 /* ==============================
@@ -207,73 +216,116 @@ main {
 
 .sobre {
     width: 100%;
-    min-height: 80vh;
+    min-height: 70vh;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
-    isolation: isolate;
+    gap: 25px;
+    padding: 60px 20px;
 }
 
-/* CAMADA DAS ESPADAS */
-.espadas-fundo {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* NÃO ALTEREI TAMANHO NEM POSIÇÃO DAS ESPADAS */
-.espada {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    object-fit: contain;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0.9;
-    top: -90px;
-}
-
-.espada-esquerda {
-    left: -100px;
-    transform: rotate(-10deg);
-}
-
-.espada-direita {
-    right: -100px;
-    transform: rotate(100deg) scaleX(-1);
-}
-
-/* CAIXA FICA NA FRENTE */
-.sobre-caixa {
-    position: relative;
-    max-width: 700px;
-    width: 100%;
-    padding: 40px;
-    background: #141414;
-    border: 2px solid #929292;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    z-index: 1;
+.sobre h2 {
+    font-size: 2.2rem !important;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    z-index: 2;
 }
 
 .sobre-conteudo {
     position: relative;
-    z-index: 3;
+    max-width: 950px;
+    width: 100%;
+    text-align: center;
+    z-index: 2; 
 }
 
-.sobre-conteudo h2 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
 
 .sobre-conteudo p {
-    font-size: 1.1rem;
-    color: #cccccc;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* ÁREA DAS ESPADAS */
+.espadas-fundo {
+    position: absolute;
+    width: 600px;
+    height: 430px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.espada {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.espada-esquerda {
+    transform: translate(-70%, -50%) rotate(-75deg);
+}
+
+.espada-direita {
+    transform: translate(-30%, -50%) rotate(75deg);
+}
+
+/* ==============================
+   MEUS PROJETOS
+================================= */
+
+.projetos{
+    width: 100%;
+    min-height: 80vh;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.projetos h2{
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 70px;
+}
+
+.carrossel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.projeto-card{
+    width: 300px;
+    height: 380px;
+    background: #000000;
+    border: 2px solid #8c8c8c;
+    border-radius: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.seta{
+    width: 45px;
+    height: 45px;
+    border: 2px solid #4b4a4a;
+    border-radius: 50%;
+    background: #000000;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#projeto-2{
+    display: none;
 }
