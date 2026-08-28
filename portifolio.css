@@ -226,12 +226,14 @@ main {
     padding: 60px 20px;
 }
 
-.sobre h2 {
+.titulo-sobre {
     font-size: 2.2rem !important;
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.5px;
     z-index: 2;
+    /* Adicionando a sombra que você queria */
+    text-shadow: 0 0 15px rgba(220, 38, 38, 0.8), 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .sobre-conteudo {
@@ -269,7 +271,7 @@ main {
     height: auto;
     top: 50%;
     left: 50%;
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none;
 }
 
@@ -285,7 +287,7 @@ main {
    MEUS PROJETOS
 ================================= */
 
-.projetos{
+.projetos {
     width: 100%;
     min-height: 80vh;
     padding: 80px 20px;
@@ -293,39 +295,272 @@ main {
     text-align: center;
 }
 
-.projetos h2{
-    font-size: 2.5rem;
+.projetos h2 {
+    font-size: 3rem;
     color: #ffffff;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ff000080;
 }
 
-.carrossel{
+.carrossel {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 30px;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 450px;
 }
 
-.projeto-card{
-    width: 300px;
-    height: 380px;
-    background: #000000;
-    border: 2px solid #8c8c8c;
-    border-radius: 20px;
-    padding: 25px;
+.projeto-card {
+    width: 750px; 
+    height: 400px;
+    background: #18181b;
+    border: 3px solid #3f3f46; 
+    border-radius: 25px;
+    padding: 40px;
     box-sizing: border-box;
+    display: none; 
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: all 0.5s ease-in-out; 
 }
 
-.seta{
+.projeto-card:hover {
+    border-color: #8b202e;
+    transform: translateY(-5px);
+}
+
+
+.projeto-card.ativo {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.projeto-card.saindo-esquerda {
+    display: flex;
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95);
+}
+
+.projeto-card.saindo-direita {
+    display: flex;
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+}
+
+.projeto-imagem {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #3f3f46; 
+    padding-right: 40px;
+}
+
+.projeto-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.projeto-info {
+    width: 60%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projeto-info h3 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.projeto-info p {
+    color: #d1d5db;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tecnologias span {
+    padding: 6px 12px;
+    background: #27272a;
+    border: 1px solid #52525b;
+    border-radius: 8px;
+    color: #e4e4e7;
+    font-size: 0.9rem;
+}
+
+.status-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-family: inherit;
+}
+
+.status-btn.privado {
+    background: rgba(140,0,0,0.2);
+    color: #ff9999;
+    border: 1px solid #8c0000;
+    cursor: default;
+}
+
+.status-btn.github {
+    background: #3f3f46;
+    color: #ffffff;
+    border: 1px solid #52525b;
+}
+
+.status-btn.github:hover {
+    background: #dc2626; 
+    color: #ffffff;
+    border-color: #dc2626;
+}
+
+.seta {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #3f3f46;
+    border-radius: 50%;
+    background: #18181b;
+    color: #a1a1aa;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seta:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.seta-esquerda { left: 0; }
+.seta-direita { right: 0; }
+
+@media (max-width: 768px) {
+    .projeto-card {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .projeto-imagem {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #3f3f46;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .projeto-info {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .tecnologias { justify-content: center; }
+    
+    .carrossel { min-height: 600px; }
+    .seta { width: 40px; height: 40px; font-size: 18px; }
+}
+
+/* ==============================
+   HABILIDADES
+================================= */
+
+.habilidades {
+    width: 100%;
+    min-height: 80vh;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.titulo-habilidades {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.habilidades-wrapper {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Grid para os cards de Soft Skills */
+.soft-skills-container-simples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo individual de cada card */
+.skill-card {
+    background: #18181b;
+    border: 2px solid #27272a;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.skill-card:hover {
+    border-color: #dc2626;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
+}
+
+.skill-card img {
     width: 45px;
     height: 45px;
-    border: 2px solid #4b4a4a;
-    border-radius: 50%;
-    background: #000000;
-    font-size: 20px;
-    cursor: pointer;
+    object-fit: contain;
 }
 
-#projeto-2{
-    display: none;
+.skill-card span {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }

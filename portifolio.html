@@ -75,37 +75,81 @@
             </div>
         </section>
 
-        <!-- SEÇÃO PROJETOS -->
+            <!-- SEÇÃO PROJETOS -->
         <section class="projetos" id="projetos">
-
-            <h2> Meus Projetos</h2>
+            <h2>Meus Projetos</h2>
 
             <div class="carrossel">
                 <button class="seta seta-esquerda">❮</button>
                 
-                <div class="projeto-card" id="projeto-1">
-                    <h3>Rebuild</h3>
-                    <p>Descrição do seu projeto.</p>
+                <!-- PROJETO 1: REBUILD -->
+                <div class="projeto-card ativo" id="projeto-1">
+                    <div class="projeto-imagem">
+                        <img src="assets/logo-Rebuild.png" alt="Logo Projeto Rebuild">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Rebuild</h3>
+                        <p>Gamificação em formato Visual Novel para ensinar conceitos básicos da Mecânica Automotiva de maneira mais interativa e dinâmica.</p>
+                        <div class="tecnologias">
+                            <span>Godot</span>
+                            <span>Skethbook</span>
+                        </div>
+                        <!-- Botão de status (sem link) -->
+                        <button class="status-btn privado">Finalizado (Privado)</button>
+                    </div>
                 </div>
-                
+
+                <!-- PROJETO 2: THE LAST OF US -->
                 <div class="projeto-card" id="projeto-2">
-                    <h3>The Last of Us</h3>
-                    <p>Descrição do seu projeto.</p>
+                    <div class="projeto-imagem">
+                        <img src="assets/the-last-of-us.png" alt="Logo Projeto The Last of Us">
+                    </div>
+                    <div class="projeto-info">
+                        <h3>The Last of Us</h3>
+                        <p>Minigames com dinâmicas no universo de The Last of Us. Sobreviver ao apocalipse nunca foi tão divertido.</p>
+                        <div class="tecnologias">
+                            <span>React</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <a href="https://github.com/Bielsantzz/The-last-of-us.git" target="_blank" class="status-btn github">Ver no GitHub</a>
+                    </div>
                 </div>
-                
+
                 <button class="seta seta-direita">❯</button>
             </div>
-
         </section>
 
-        <!-- HABILIDADES -->
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <p>HTML</p>
-            <p>CSS</p>
-            <p>JavaScript</p>
-            <p>React</p>
-            <p>Python</p>
+                <!-- HABILIDADES - SOFT SKILLS -->       
+        <section class="habilidades" id="habilidades">
+            <h2 class="titulo-habilidades">Habilidades</h2>
+
+            <div class="habilidades-wrapper">
+                <div class="soft-skills-container-simples">
+                    
+                    <div class="skill-card">
+                        <img src="assets/equipe-icon.png" alt="Trabalho em Equipe">
+                        <span>Trabalho em Equipe</span>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="assets/comunicacao-icon.png" alt="Comunicação">
+                        <span>Comunicação</span>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="assets/problemas-icon.png" alt="Resolução de Problemas">
+                        <span>Resolução de Problemas</span>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <img src="assets/adaptabilidade-icon.png" alt="Adaptabilidade">
+                        <span>Adaptabilidade</span>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- CONTATO -->
