@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -29,7 +31,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 3px solid #b21818;
+    border-bottom: 3px solid #8a8a8a;
 }
 
 .barra-nav {
@@ -72,7 +74,7 @@ body {
 }
 
 .menu-lista li a:hover {
-    color: #cca827;
+    color: #2cad33;
 }
 
 .lampada {
@@ -83,11 +85,6 @@ body {
     z-index: 2000;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.lampada.escondida {
-    opacity: 0;
-    visibility: hidden;
 }
 
 .lampada img {
@@ -196,7 +193,7 @@ main {
     height: auto;
     object-fit: contain;
     pointer-events: none; 
-    opacity: 0.45;       
+    opacity: 0.7;       
 }
 
 .efeito-agua {
@@ -207,7 +204,7 @@ main {
     height: auto;
     z-index: 3;
     pointer-events: none;
-    opacity: 0.45;
+    opacity: 0.7;
 }
 
 /* ==============================
@@ -226,14 +223,9 @@ main {
     padding: 60px 20px;
 }
 
-.titulo-sobre {
-    font-size: 2.2rem !important;
-    color: #ffffff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    z-index: 2;
-    /* Adicionando a sombra que você queria */
-    text-shadow: 0 0 15px rgba(220, 38, 38, 0.8), 0 2px 5px rgba(0, 0, 0, 0.9);
+.sobre h2 {
+    font-size: 2.2rem; 
+    
 }
 
 .sobre-conteudo {
@@ -247,10 +239,10 @@ main {
 
 .sobre-conteudo p {
     font-size: 1.3rem;
-    color: #d1d5db;
+    color: #ffffff;
     line-height: 1.7;
     margin-bottom: 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    
 }
 
 /* ÁREA DAS ESPADAS */
@@ -296,13 +288,16 @@ main {
 }
 
 .projetos h2 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #ffffff;
+    background: linear-gradient(135deg, #31c0f0 0%, #166781 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 60px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px #ff000080;
+    
 }
 
 .carrossel {
@@ -317,22 +312,21 @@ main {
 }
 
 .projeto-card {
-    width: 750px; 
-    height: 400px;
+    width: 850px; 
+    height: 450px;
     background: #18181b;
-    border: 3px solid #3f3f46; 
+    border: 4px solid #5fb8d650; 
     border-radius: 25px;
     padding: 40px;
     box-sizing: border-box;
     display: none; 
     align-items: center;
     gap: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     transition: all 0.5s ease-in-out; 
 }
 
 .projeto-card:hover {
-    border-color: #8b202e;
+    border-color: #31c0f0;
     transform: translateY(-5px);
 }
 
@@ -400,10 +394,10 @@ main {
 
 .tecnologias span {
     padding: 6px 12px;
-    background: #27272a;
+    background: #3a3a3b;
     border: 1px solid #52525b;
     border-radius: 8px;
-    color: #e4e4e7;
+    color: #ffffff;
     font-size: 0.9rem;
 }
 
@@ -422,22 +416,22 @@ main {
 }
 
 .status-btn.privado {
-    background: rgba(140,0,0,0.2);
-    color: #ff9999;
-    border: 1px solid #8c0000;
+    background: #9b0d0d;
+    color: #ffffff;
+    border: 2px solid #c75f6d;
     cursor: default;
 }
 
 .status-btn.github {
-    background: #3f3f46;
+    background: #216d85;
     color: #ffffff;
-    border: 1px solid #52525b;
+    border: 1px solid #31c0f08c;
 }
 
 .status-btn.github:hover {
-    background: #dc2626; 
+    background: #31c0f0; 
     color: #ffffff;
-    border-color: #dc2626;
+    border-color: #6992a0;
 }
 
 .seta {
@@ -445,7 +439,7 @@ main {
     height: 60px;
     border: 2px solid #3f3f46;
     border-radius: 50%;
-    background: #18181b;
+    background: #000000;
     color: #a1a1aa;
     font-size: 24px;
     cursor: pointer;
@@ -460,85 +454,107 @@ main {
 }
 
 .seta:hover {
-    border-color: #dc2626;
-    color: #dc2626;
+    border-color: #31c0f0;
+    color: #edf2f3;
     transform: translateY(-50%) scale(1.1);
 }
 
 .seta-esquerda { left: 0; }
 .seta-direita { right: 0; }
 
-@media (max-width: 768px) {
-    .projeto-card {
-        width: 90%;
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
-    
-    .projeto-imagem {
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid #3f3f46;
-        padding-right: 0;
-        padding-bottom: 20px;
-    }
-    
-    .projeto-info {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .tecnologias { justify-content: center; }
-    
-    .carrossel { min-height: 600px; }
-    .seta { width: 40px; height: 40px; font-size: 18px; }
-}
 
-/* ==============================
-   HABILIDADES
-================================= */
 
-.habilidades {
+/* ==================================
+   HABILIDADES E KEKKIJUTSU(DECORAÇÃO)
+===================================== */
+
+.skills-section {
+    position: relative;
+    max-width: 1100px;  
     width: 100%;
     min-height: 80vh;
+    margin: 0 auto;     
     padding: 80px 20px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.titulo-habilidades {
-    font-size: 3rem;
+.skills-section h2{
+    font-size: 2.2rem;
     color: #ffffff;
     margin-bottom: 50px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
+    background: linear-gradient(135deg, #e22584 0%, #831744 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     
 }
 
-.habilidades-wrapper {
-    max-width: 1100px;
+
+
+.skills-toggle-btn {
+    position: absolute;
+    top: 80px;  
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #52525b;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.skills-toggle-btn:hover {
+    background-color: #a81c4f;
+    border-color: #ff176caf;
+    transform: translateY(-2px);
+}
+
+.skills-wrapper {
+    position: relative;
     width: 100%;
     margin: 0 auto;
+    min-height: 350px; 
 }
 
-/* Grid para os cards de Soft Skills */
-.soft-skills-container-simples {
+.skills-bloco {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.skills-bloco.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
-/* Estilo individual de cada card */
-.skill-card {
-    background: #18181b;
-    border: 2px solid #27272a;
+.skill-item {
+    background: #000000;
+    border: 3px solid #d625a188;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 50px 70px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 15px;
@@ -546,21 +562,239 @@ main {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.skill-card:hover {
+.skill-item:hover {
+    border-color: #e70ba5;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
+}
+
+.skill-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    order: 1;
+}
+
+.skill-item span {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    order: 2;
+    text-align: center;
+}
+
+.kekkijutsu-decor-left{
+    position: absolute;
+    top: 100%;
+    left: -230px;
+    transform: translateY(-50%);
+    width: 480px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.kekkijutsu-decor-right{
+    position: absolute;
+    top: 60%;
+    right: -240px;
+    left: auto;  
+    transform: translateY(-50%);
+    width: 260px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+}
+
+/* ==================================
+   EXPERIÊNCIA E FORMAÇÃO (CURRÍCULO)
+===================================== */
+
+.curriculo-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto 0 auto; 
+    padding: 280px 20px;
+    box-sizing: border-box;
+}
+
+.curriculo-section h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    
+   
+}
+
+.curriculo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.curriculo-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.curriculo-card {
+    background: #000000;
+    border: 3px solid #79621bab;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px #b68a083d;
+}
+
+.curriculo-card:hover {
+    border-color: #ffbf00;
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    font-size: 2rem;
+    background: #27272a;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-info h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-info .empresa {
+    color: #f7bb08;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card-info .periodo {
+    color: #ccccd4;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* ==============================
+   CONTATOS
+================================= */
+
+.contato-section {
+    width: 100%;
+    max-width: 700px;
+    margin: 10px auto 0 auto; /* O valor negativo puxa a seção para cima */
+    padding: 1px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.contato-section h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+   
+}
+
+.contato-section p {
+    color: #d1d5db;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato-card-social {
+    background: #18181b;
+    border: 2px solid #3f3f46;
+    border-radius: 15px;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    min-width: 140px;
+}
+
+.contato-card-social:hover {
     border-color: #dc2626;
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
 }
 
-.skill-card img {
-    width: 45px;
-    height: 45px;
+.contato-card-social img {
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
-.skill-card span {
+.contato-card-social span {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+}
+
+/* ==============================
+   RODAPÉ (FOOTER)
+================================= */
+
+.footer-section {
+    width: 100%;
+    background-color: #000000;
+    border-top: 2px solid #3f3f46;
+    padding: 30px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-section p {
+    color: #fdfdff;
+    font-size: 0.95rem;
+}
+
+.footer-tema {
+    color: #fcf7f7 !important;
+    font-size: 0.85rem !important;
+    font-weight: 500;
+    letter-spacing: 1px;
 }

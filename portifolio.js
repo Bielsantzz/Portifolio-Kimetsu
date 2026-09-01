@@ -43,4 +43,17 @@ if (setaDireita && setaEsquerda) {
     });
 }
 
+const btnToggle = document.getElementById('btn-toggle-skills');
+const blocoHard = document.getElementById('bloco-hard');
+const blocoSoft = document.getElementById('bloco-soft');
 
+btnToggle.addEventListener('click', () => {
+    blocoHard.classList.toggle('hidden');
+    blocoSoft.classList.toggle('hidden');
+
+    if (blocoHard.classList.contains('hidden')) {
+        btnToggle.textContent = 'Ver Hard Skills';
+    } else {
+        btnToggle.textContent = 'Ver Soft Skills';
+    }
+});
