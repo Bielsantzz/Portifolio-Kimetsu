@@ -1,4 +1,24 @@
+:root {
+  /* Fundo noturno e superfícies */
+  --bg: #0b0e0d;                  /* Preto esverdeado profundo (noite) */
+  --surface: rgba(255, 255, 255, 0.03);
+  --ink: #f4f6f5;                 /* Branco suave para textos */
+  --muted: #95a39b;               /* Cinza esverdeado para subtítulos */
+  --line: rgba(255, 255, 255, 0.08);
+
+  /* As cores oficiais do Tanjiro */
+  --haori-green: #1b4d3e;         /* Verde escuro oficial do haori */
+  --haori-dark: #0f2d24;          /* Verde profundo para sombras */
+  --water-blue: #2274a5;          /* Azul clássico da Respiração da Água */
+  --water-glow: #3299cc;          /* Azul claro para brilhos e detalhes */
+  --sun-red: #cc2929;             /* Vermelho vibrante da Hinokami Kagura */
+  --sun-orange: #e65c00;          /* Laranja intenso das chamas */
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.7);
+  --glow: rgba(34, 116, 165, 0.35); /* Brilho padrão inspirado na água/sol */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,92 +33,133 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #000000 0%, #1f1e1e 35%, #313131 65%, #000000 100%);
-    background-attachment: fixed;
-    color: #F5F5F5;
-    min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(105, 16, 16, 0.295), transparent 20%),  /* Azul da Água (Sup. Esquerdo) */
+    radial-gradient(circle at top right, rgba(105, 13, 13, 0.418), transparent 35%),   /* Verde do Haori (Sup. Direito) */
+    radial-gradient(circle at 50% 90%, rgba(230, 92, 0, 0.123), transparent 30%),  /* Laranja da Brasa (Baixo Centro) */
+    var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ==============================
-   NAV BAR, LINKS, LOGO E LAMPADAS 
+   NAVBAR
 ================================= */
 
 .meu-cabecalho {
-    background-color: #000000;
-    width: 100%;
-    height: 75px;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(11, 14, 13, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--haori-green, #1b4d3e);
     z-index: 1000;
-    border-bottom: 3px solid #8a8a8a;
+    box-sizing: border-box;
 }
+
+
+/* ==============================
+   BARRA DE NAVEGAÇÃO
+================================= */
 
 .barra-nav {
     width: 100%;
-    max-width: 1200px;
-    height: 80px;
+    max-width: 1400px;
+    height: 100%;
+
     margin: 0 auto;
+    padding: 0 50px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    box-sizing: border-box;
 }
+
+
+/* ==============================
+   LOGO — ESQUERDA
+================================= */
 
 .link-logo {
     display: flex;
     align-items: center;
-    height: 100%;
     text-decoration: none;
+    flex-shrink: 0;
+    position: relative;
+}
+.link-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    position: relative;
 }
 
 .logo-img {
-    height: 80px;
+    display: block;
+    height: 70px;
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(105, 16, 16, 0.4));
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
+
+.link-logo:hover .logo-img {
+    filter: drop-shadow(0 0 10px var(--haori-green));
+    transform: scale(1.02);
+}
+
+
+/* ==============================
+   MENU — DIREITA
+================================= */
 
 .menu-lista {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
+.menu-lista li {
+    margin: 0;
+    padding: 0;
+}
+
 .menu-lista li a {
-    color: #ffffff;
+    color: var(--ink, #ffffff);
     text-decoration: none;
+    font-size: 1rem;
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu-lista li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--haori-green, #1b4d3e);
+    transition: width 0.3s ease;
 }
 
 .menu-lista li a:hover {
-    color: #2cad33;
+    color: rgba(74, 222, 128, 0.719); /* Um verde vivo que destaca bem no fundo escuro */
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
 }
 
-.lampada {
-    position: fixed;
-    top: 80px;
-    width: 70px;
-    height: 100px;
-    z-index: 2000;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.lampada img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-}
-
-.lampada-esquerda {
-    left: 20px;
-}
-
-.lampada-direita {
-    right: 35px;
+.menu-lista li a:hover::after {
+    width: 100%;
 }
 
 main {
@@ -106,8 +167,12 @@ main {
 }
 
 /* ==============================
-    TITULO "OLÁ"
+   TITULO "OLÁ" E INTRO
 ================================= */
+
+.intro{
+    position: relative;
+}
 
 .inicio {
     min-height: calc(100vh - 95px);
@@ -115,7 +180,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 250px;
+    gap: 15vw;
     padding: 40px 5vw;
     box-sizing: border-box;
     flex-direction: row-reverse;
@@ -123,42 +188,66 @@ main {
     transform: translateY(-20px);
 }
 
-.inicio h1 {
-    font-size: 3.8rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.inicio h1.titulo-principal {
+    position: relative;
+    font-size: 3.5rem;
     font-weight: 850;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-align: left;
+    display: block;
     
     background: linear-gradient(
         135deg, 
-        #e0e0e0 0%, 
-        #ffffff 25%, 
-        #8c8c8c 50%, 
-        #f2f2f2 75%, 
-        #595959 100%
+        #ffffff 0%, 
+        #d1d5db 40%, 
+        #9ca3af 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
 }
 
-.inicio p {
-    font-size: 1.6rem;
+.inicio p.cargo {
+    font-size: 1.5rem;
+    color: var(--muted, #95a39b) ;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.btn-cv {
+    display: inline-block;
+    background: linear-gradient(135deg, #8a0000 0%, #1a0000 100%);
     color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-cv:hover {
+    background: linear-gradient(135deg, #b30000 0%, #2a0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(179, 0, 0, 0.5);
+    border-color: rgba(255, 0, 0, 0.7);
 }
 
 /* ==============================
    MOLDURA DA FOTO e EFEITOS 
 ================================= */
 
+
 .moldura-foto {
     position: relative;
     width: 430px;
     height: 430px;
     margin-bottom: 20px;
+    flex-shrink: 0;
 }
 
 .minha-foto {
@@ -185,21 +274,27 @@ main {
 }
 
 .efeito-trovao {
-    position: absolute;
-    left: -230px;
-    top: 120px;
-    transform: translateY(-50%);
-    width: 250px;
+    position: fixed;
+    left: -350px; 
+    top: 90%; 
+    transform: translateY(-50%); 
+    width: 200px; /* Tamanho base fixo ou controlado */
     height: auto;
-    object-fit: contain;
     pointer-events: none; 
-    opacity: 0.7;       
+    opacity: 0.8; 
+}
+
+@media (max-width: 1440px) {
+    .efeito-trovao {
+        left: -500px; /* Distância menor em pixels para a tela do notebook */
+        width: 790px;  /* Reduz levemente para caber proporcionalmente */
+    }
 }
 
 .efeito-agua {
     position: absolute;
-    top: 400px;         
-    right: -370px;       
+    top: 400px;        
+    right: -370px;      
     width: 300px;
     height: auto;
     z-index: 3;
@@ -213,36 +308,51 @@ main {
 
 .sobre {
     width: 100%;
-    min-height: 70vh;
+    min-height: 80vh;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 25px;
-    padding: 60px 20px;
+    padding: 80px 20px;
+    scroll-margin-top: 80px;
 }
 
 .sobre h2 {
-    font-size: 2.2rem; 
+    font-size: 2.8rem;
+    font-weight: 850;
+    text-align: center;
+    position: relative;
+    z-index: 2;
     
+    background: linear-gradient(
+        135deg, 
+        #e0e0e0 0%, 
+        #ffffff 25%, 
+        #8c8c8c 50%, 
+        #f2f2f2 75%, 
+        #595959 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+    margin-bottom: 10px;
 }
 
 .sobre-conteudo {
     position: relative;
-    max-width: 950px;
+    max-width: 850px;
     width: 100%;
     text-align: center;
     z-index: 2; 
 }
 
-
 .sobre-conteudo p {
-    font-size: 1.3rem;
-    color: #ffffff;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.8;
     margin-bottom: 20px;
-    
 }
 
 /* ÁREA DAS ESPADAS */
@@ -263,7 +373,7 @@ main {
     height: auto;
     top: 50%;
     left: 50%;
-    opacity: 0.2;
+    opacity: 0.15;
     pointer-events: none;
 }
 
@@ -297,7 +407,6 @@ main {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    
 }
 
 .carrossel {
@@ -306,9 +415,10 @@ main {
     align-items: center;
     gap: 30px;
     position: relative;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     min-height: 450px;
+    padding: 0 70px;
 }
 
 .projeto-card {
@@ -329,7 +439,6 @@ main {
     border-color: #31c0f0;
     transform: translateY(-5px);
 }
-
 
 .projeto-card.ativo {
     display: flex;
@@ -435,34 +544,27 @@ main {
 }
 
 .seta {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #3f3f46;
     border-radius: 50%;
     background: #000000;
     color: #a1a1aa;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+    transition: 0.3s; 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+    z-index: 10;
 }
 
 .seta:hover {
     border-color: #31c0f0;
     color: #edf2f3;
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
 }
-
-.seta-esquerda { left: 0; }
-.seta-direita { right: 0; }
-
-
 
 /* ==================================
    HABILIDADES E KEKKIJUTSU(DECORAÇÃO)
@@ -489,10 +591,7 @@ main {
     background: linear-gradient(135deg, #e22584 0%, #831744 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-     
 }
-
-
 
 .skills-toggle-btn {
     position: absolute;
@@ -616,8 +715,8 @@ main {
 .curriculo-section {
     width: 100%;
     max-width: 1200px;
-    margin: 80px auto 0 auto; 
-    padding: 280px 20px;
+    margin: 0 auto; 
+    padding: 160px 20px 80px 20px;
     box-sizing: border-box;
 }
 
@@ -629,8 +728,6 @@ main {
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
-    
-   
 }
 
 .curriculo-container {
@@ -703,8 +800,8 @@ main {
 .contato-section {
     width: 100%;
     max-width: 700px;
-    margin: 10px auto 0 auto; /* O valor negativo puxa a seção para cima */
-    padding: 1px 20px;
+    margin: 60px auto 0 auto; 
+    padding: 10px 20px;
     box-sizing: border-box;
     text-align: center;
 }
@@ -716,7 +813,6 @@ main {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-   
 }
 
 .contato-section p {
@@ -798,3 +894,4 @@ main {
     font-weight: 500;
     letter-spacing: 1px;
 }
+
