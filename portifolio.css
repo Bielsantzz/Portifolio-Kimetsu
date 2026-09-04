@@ -1,21 +1,30 @@
-:root {
-  /* Fundo noturno e superfícies */
-  --bg: #0b0e0d;                  /* Preto esverdeado profundo (noite) */
-  --surface: rgba(255, 255, 255, 0.03);
-  --ink: #f4f6f5;                 /* Branco suave para textos */
-  --muted: #95a39b;               /* Cinza esverdeado para subtítulos */
-  --line: rgba(255, 255, 255, 0.08);
+/* ==============================
+   CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+================================= */
 
-  /* As cores oficiais do Tanjiro */
-  --haori-green: #1b4d3e;         /* Verde escuro oficial do haori */
-  --haori-dark: #0f2d24;          /* Verde profundo para sombras */
-  --water-blue: #2274a5;          /* Azul clássico da Respiração da Água */
-  --water-glow: #3299cc;          /* Azul claro para brilhos e detalhes */
-  --sun-red: #cc2929;             /* Vermelho vibrante da Hinokami Kagura */
-  --sun-orange: #e65c00;          /* Laranja intenso das chamas */
-  --shadow: 0 18px 48px rgba(0, 0, 0, 0.7);
-  --glow: rgba(34, 116, 165, 0.35); /* Brilho padrão inspirado na água/sol */
+/* Fundo noturno e superfícies */
+
+:root{
+    --bg: #070d0a;                 /* Preto esverdeado bem profundo */
+    --surface: rgba(255, 255, 255, 0.03);
+    --ink: #f4f6f5;                 /* Branco suave para textos */
+    --muted: #81aa93;               /* Cinza esverdeado suave para subtítulos */
+    --line: rgba(27, 77, 62, 0.25);   /* Linhas sutis com toque verde */
+    
+    /* A paleta verde oficial do Tanjiro e detalhes do Haori/Hinokami */
+    --haori-green: #1b4d3e;         /* Verde escuro clássico do haori */
+    --haori-dark: #0f2d24;          /* Verde profundo para sombras e fundos profundos */
+    --green-neon: #2ecc71;          /* Verde vibrante para destaques e elementos ativos */
+    --green-glow: rgba(46, 204, 113, 0.35); /* Brilho suave esmeralda */
+    
+    --sun-red: #cc2929;             /* Vermelho da Hinokami Kagura para detalhes e botões de destaque */
+    --sun-orange: #e65c00;          /* Laranja intenso das chamas */
+    
+    --shadow: 0 18px 48px rgba(0, 0, 0, 0.8);
+    --glow: rgba(46, 204, 113, 0.25); /* Brilho padrão harmonizado com o verde */
 }
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
@@ -28,20 +37,21 @@
 
 html {
     scroll-behavior: smooth;
-    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(105, 16, 16, 0.295), transparent 20%),  /* Azul da Água (Sup. Esquerdo) */
-    radial-gradient(circle at top right, rgba(105, 13, 13, 0.418), transparent 35%),   /* Verde do Haori (Sup. Direito) */
-    radial-gradient(circle at 50% 90%, rgba(230, 92, 0, 0.123), transparent 30%),  /* Laranja da Brasa (Baixo Centro) */
-    var(--bg);
-  color: var(--ink);
-  line-height: 1.6;
-  overflow-x: hidden;
+    background-color: var(--bg);
+    background-image: 
+        radial-gradient(circle at center, transparent 30%, rgb(0, 0, 0) 95%),
+        linear-gradient(rgba(21, 102, 62, 0.192), rgba(31, 94, 62, 0.082)), 
+        url('assets/haori.jpg'); 
+    background-repeat: repeat;    
+    background-size: 300px;       
+    background-attachment: fixed; 
+    color: var(--ink);
+    width: 100%;
 }
 
 /* ==============================
@@ -54,108 +64,74 @@ body {
     left: 0;
     width: 100%;
     height: 80px;
-    background: rgba(11, 14, 13, 0.85);
-    backdrop-filter: blur(8px);
-    border-bottom: 2px solid var(--haori-green, #1b4d3e);
+    background: rgba(7, 13, 10, 0.85); 
+    backdrop-filter: blur(10px);       
+    border-bottom: 1px solid var(--line); 
     z-index: 1000;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
 }
-
-
-/* ==============================
-   BARRA DE NAVEGAÇÃO
-================================= */
 
 .barra-nav {
+    max-width: 1200px;
     width: 100%;
-    max-width: 1400px;
-    height: 100%;
-
     margin: 0 auto;
-    padding: 0 50px;
-
+    padding: 0 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
+    align-items: center;
 }
-
-
-/* ==============================
-   LOGO — ESQUERDA
-================================= */
 
 .link-logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-    position: relative;
-}
-.link-logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    flex-shrink: 0;
-    position: relative;
 }
 
 .logo-img {
-    display: block;
     height: 70px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(105, 16, 16, 0.4));
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.link-logo:hover .logo-img {
-    filter: drop-shadow(0 0 10px var(--haori-green));
-    transform: scale(1.02);
+.logo-img:hover {
+    transform: scale(1.05);
 }
-
-
-/* ==============================
-   MENU — DIREITA
-================================= */
 
 .menu-lista {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin: 0;
-    padding: 0;
     list-style: none;
-}
-
-.menu-lista li {
+    display: flex;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
 .menu-lista li a {
-    color: var(--ink, #ffffff);
+    color: var(--muted);
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
-    position: relative;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.menu-lista li a:hover {
+    color: var(--ink);
+    text-shadow: 0 0 10px var(--green-neon);
 }
 
 .menu-lista li a::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--haori-green, #1b4d3e);
+    background-color: var(--green-neon);
     transition: width 0.3s ease;
-}
-
-.menu-lista li a:hover {
-    color: rgba(74, 222, 128, 0.719); /* Um verde vivo que destaca bem no fundo escuro */
-    text-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
 }
 
 .menu-lista li a:hover::after {
@@ -167,25 +143,27 @@ main {
 }
 
 /* ==============================
-   TITULO "OLÁ" E INTRO
+   SEÇÃO INÍCIO 
 ================================= */
 
-.intro{
-    position: relative;
-}
-
 .inicio {
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh - 115px);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15vw;
-    padding: 40px 5vw;
+    gap: 8vw;
+    padding: 60px 5vw;
     box-sizing: border-box;
     flex-direction: row-reverse;
     text-align: left;
-    transform: translateY(-20px);
+    position: relative;
+}
+
+.intro {
+    position: relative;
+    max-width: 550px;
+    animation: surgirDaSombra 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .inicio h1.titulo-principal {
@@ -196,23 +174,18 @@ main {
     margin-bottom: 15px;
     text-align: left;
     display: block;
-    
-    background: linear-gradient(
-        135deg, 
-        #ffffff 0%, 
-        #d1d5db 40%, 
-        #9ca3af 100%
-    );
+    background: linear-gradient(135deg, #ffffff 0%, #d1d5db 40%, #9ca3af 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
 }
 
 .inicio p.cargo {
-    font-size: 1.5rem;
-    color: var(--muted, #95a39b) ;
+    font-size: 1.4rem;
+    color: var(--muted);
     margin-bottom: 25px;
     text-align: left;
+    letter-spacing: 1px;
 }
 
 .btn-cv {
@@ -238,68 +211,75 @@ main {
 }
 
 /* ==============================
-   MOLDURA DA FOTO e EFEITOS 
+   MOLDURA DA FOTO E EFEITOS
 ================================= */
-
 
 .moldura-foto {
     position: relative;
-    width: 430px;
-    height: 430px;
-    margin-bottom: 20px;
+    width: 320px;
+    height: 350px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; 
+    animation: surgirDaSombra 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    opacity: 0;
 }
 
 .minha-foto {
-    width: 78%;
-    height: 78%;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .moldura {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
     object-fit: contain;
 }
 
-.efeito-trovao {
-    position: fixed;
-    left: -350px; 
-    top: 90%; 
-    transform: translateY(-50%); 
-    width: 200px; /* Tamanho base fixo ou controlado */
-    height: auto;
-    pointer-events: none; 
-    opacity: 0.8; 
-}
-
-@media (max-width: 1440px) {
-    .efeito-trovao {
-        left: -500px; /* Distância menor em pixels para a tela do notebook */
-        width: 790px;  /* Reduz levemente para caber proporcionalmente */
-    }
-}
-
 .efeito-agua {
     position: absolute;
-    top: 400px;        
-    right: -370px;      
-    width: 300px;
+    width: 250px; 
     height: auto;
-    z-index: 3;
+    top: 70%;
+    left: -70px;
+    transform: translate(-50%);
+    z-index: 1; 
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.3;   
+}
+
+.efeito-trovao {
+    position: absolute;
+    width: 250px; 
+    height: auto;
+    top: 40%;
+    right: -140px;
+    transform: translate(-50%);
+    z-index: 1; 
+    pointer-events: none;
+    opacity: 0.3;   
+}
+
+
+
+
+@keyframes surgirDaSombra {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ==============================
@@ -325,17 +305,7 @@ main {
     text-align: center;
     position: relative;
     z-index: 2;
-    
-    background: linear-gradient(
-        135deg, 
-        #e0e0e0 0%, 
-        #ffffff 25%, 
-        #8c8c8c 50%, 
-        #f2f2f2 75%, 
-        #595959 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--haori-green);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
     margin-bottom: 10px;
 }
@@ -350,12 +320,12 @@ main {
 
 .sobre-conteudo p {
     font-size: 1.2rem;
-    color: #cccccc;
+    color: #d1d5db;
     line-height: 1.8;
     margin-bottom: 20px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9); 
 }
 
-/* ÁREA DAS ESPADAS */
 .espadas-fundo {
     position: absolute;
     width: 600px;
@@ -373,17 +343,13 @@ main {
     height: auto;
     top: 50%;
     left: 50%;
-    opacity: 0.15;
+    opacity: 0.2;
     pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(10, 153, 189, 0.61)); 
 }
 
-.espada-esquerda {
-    transform: translate(-70%, -50%) rotate(-75deg);
-}
-
-.espada-direita {
-    transform: translate(-30%, -50%) rotate(75deg);
-}
+.espada-esquerda { transform: translate(-70%, -50%) rotate(-75deg); }
+.espada-direita { transform: translate(-30%, -50%) rotate(75deg); }
 
 /* ==============================
    MEUS PROJETOS
@@ -395,15 +361,16 @@ main {
     padding: 80px 20px;
     box-sizing: border-box;
     text-align: center;
+    position: relative;
 }
 
 .projetos h2 {
     font-size: 2.2rem;
-    color: #ffffff;
-    background: linear-gradient(135deg, #31c0f0 0%, #166781 100%);
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--green-neon)0%, var(--haori-green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -413,30 +380,33 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     position: relative;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
-    min-height: 450px;
-    padding: 0 70px;
+    padding: 0 10px;
 }
 
 .projeto-card {
-    width: 850px; 
-    height: 450px;
-    background: #18181b;
-    border: 4px solid #5fb8d650; 
-    border-radius: 25px;
-    padding: 40px;
+    width: 100%;
+    height: 500px;
+    max-width: 850px;
+    background: var(--haori-dark);
+    border: 3px solid #1c4d30; 
+    border-radius: 20px;
+    padding: 30px;
     box-sizing: border-box;
     display: none; 
+    flex-direction: row;
     align-items: center;
     gap: 40px;
     transition: all 0.5s ease-in-out; 
+    box-shadow: var(--shadow);
 }
 
 .projeto-card:hover {
-    border-color: #31c0f0;
+    border-color: #205341;
+    box-shadow: 0 0 25px var(--green-glow);
     transform: translateY(-5px);
 }
 
@@ -449,23 +419,25 @@ main {
 .projeto-card.saindo-esquerda {
     display: flex;
     opacity: 0;
-    transform: translateX(-50px) scale(0.95);
+    transform: translateX(-30px) scale(0.95);
 }
 
 .projeto-card.saindo-direita {
     display: flex;
     opacity: 0;
-    transform: translateX(50px) scale(0.95);
+    transform: translateX(30px) scale(0.95);
 }
 
 .projeto-imagem {
-    width: 40%;
+    width: 42%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 2px solid #3f3f46; 
-    padding-right: 40px;
+    border-right: 2px solid var(--line);
+    border-bottom: none;
+    padding-right: 35px;
+    padding-bottom: 0;
 }
 
 .projeto-imagem img {
@@ -475,82 +447,83 @@ main {
 }
 
 .projeto-info {
-    width: 60%;
+    width: 58%;
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 18px;
 }
 
 .projeto-info h3 {
-    color: #ffffff;
-    font-size: 2.5rem;
+    color: var(--ink);
+    font-size: 2rem;
     font-weight: 600;
 }
 
 .projeto-info p {
-    color: #d1d5db;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5;
     font-weight: 300;
 }
 
 .tecnologias {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tecnologias span {
-    padding: 6px 12px;
-    background: #3a3a3b;
-    border: 1px solid #52525b;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 0.9rem;
+    padding: 5px 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    font-size: 0.85rem;
 }
 
 .status-btn {
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
     border: none;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 10px;
     font-family: inherit;
 }
 
 .status-btn.privado {
-    background: #9b0d0d;
-    color: #ffffff;
-    border: 2px solid #c75f6d;
+    background: var(--haori-dark);
+    color: var(--muted);
+    border: 2px solid var(--line);
     cursor: default;
 }
 
 .status-btn.github {
-    background: #216d85;
-    color: #ffffff;
-    border: 1px solid #31c0f08c;
+    background: var(--haori-green);
+    color: var(--ink);
+    border: 1px solid var(--green-neon);
 }
 
 .status-btn.github:hover {
-    background: #31c0f0; 
-    color: #ffffff;
-    border-color: #6992a0;
+    background: var(--green-neon);
+    color: var(--bg);
+    box-shadow: 0 0 15px var(--green-glow);
 }
 
 .seta {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #3f3f46;
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--line);
     border-radius: 50%;
-    background: #000000;
-    color: #a1a1aa;
-    font-size: 20px;
+    background: var(--haori-dark);
+    color: var(--muted);
+    font-size: 18px;
     cursor: pointer;
     transition: 0.3s; 
     display: flex;
@@ -561,151 +534,129 @@ main {
 }
 
 .seta:hover {
-    border-color: #31c0f0;
-    color: #edf2f3;
+    border-color: var(--green-neon);
+    color: var(--green-neon);
+    box-shadow: 0 0 15px var(--green-glow);
     transform: scale(1.1);
 }
-
 /* ==================================
-   HABILIDADES E KEKKIJUTSU(DECORAÇÃO)
+   HABILIDADES
 ===================================== */
 
 .skills-section {
     position: relative;
-    max-width: 1100px;  
-    width: 100%;
-    min-height: 80vh;
-    margin: 0 auto;     
     padding: 80px 20px;
     box-sizing: border-box;
     text-align: center;
 }
 
-.skills-section h2{
+.skills-section h2 {
     font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 50px;
-    font-weight: 700;
+    margin-bottom: 20px;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, #e22584 0%, #831744 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .skills-toggle-btn {
-    position: absolute;
-    top: 80px;  
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #ffffff;
-    border: 2px solid #52525b;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    background-color: #1e1e24;
+    color: #38bdf8;
+    border: 2px solid #38bdf8;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    z-index: 10;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
 }
 
 .skills-toggle-btn:hover {
     background-color: #a81c4f;
-    border-color: #ff176caf;
-    transform: translateY(-2px);
+    border-color: #ff176cad;
 }
 
 .skills-wrapper {
     position: relative;
-    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
-    min-height: 350px; 
+    z-index: 1;
 }
 
+/* Transição suave dos blocos de Hard/Soft Skills */
 .skills-bloco {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
     opacity: 1;
-    visibility: visible;
     transform: translateY(0);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.skills-bloco.saindo {
+    opacity: 0;
+    transform: translateY(15px);
 }
 
 .skills-bloco.hidden {
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    pointer-events: none;
+    transform: translateY(-15px);
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .skill-item {
-    background: #000000;
-    border: 3px solid #d625a188;
-    border-radius: 15px;
-    padding: 50px 70px;
-    box-sizing: border-box;
+    background-color: #18181f;
+    border: 1px solid #9c22a0;
+    border-radius: 12px;
+    padding: 20px;
+    width: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    gap: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
-    border-color: #e70ba5;
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
+    border-color: #38bdf8;
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2); /* Corrigido o espaço no rgba */
 }
 
 .skill-item img {
     width: 45px;
     height: 45px;
     object-fit: contain;
-    order: 1;
 }
 
 .skill-item span {
-    color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 0.95rem; /* Corrigido o espaço no rem */
     font-weight: 600;
-    letter-spacing: 0.5px;
-    order: 2;
-    text-align: center;
+    color: #e2e8f0;
 }
 
-.kekkijutsu-decor-left{
+/* Imagens decorativas de fundo (Kekkijutsu) */
+.kekkijutsu-decor-left,
+.kekkijutsu-decor-right {
     position: absolute;
-    top: 100%;
-    left: -230px;
+    top: 70%;
     transform: translateY(-50%);
-    width: 480px;
-    height: auto;
+    width: 180px;
+    opacity: 0.7;
     pointer-events: none;
-    z-index: 1;
-    opacity: 0.4;
+    z-index: 0;
 }
 
-.kekkijutsu-decor-right{
-    position: absolute;
-    top: 60%;
-    right: -240px;
-    left: auto;  
-    transform: translateY(-50%);
-    width: 260px;
-    height: auto;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.4;
+.kekkijutsu-decor-left {
+    left: 10px;
+}
+
+.kekkijutsu-decor-right {
+    right: 5px;
 }
 
 /* ==================================
@@ -716,7 +667,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto; 
-    padding: 160px 20px 80px 20px;
+    padding: 100px 20px 80px 20px;
     box-sizing: border-box;
 }
 
@@ -744,14 +695,14 @@ main {
 
 .curriculo-card {
     background: #000000;
-    border: 3px solid #79621bab;
+    border: 3px solid rgba(121, 98, 27, 0.67);
     border-radius: 15px;
     padding: 25px;
     display: flex;
     align-items: flex-start;
     gap: 20px;
     transition: 0.3s ease;
-    box-shadow: 0 10px 25px #b68a083d;
+    box-shadow: 0 10px 25px rgba(182, 138, 8, 0.24);
 }
 
 .curriculo-card:hover {
@@ -872,7 +823,7 @@ main {
     padding: 30px 20px;
     text-align: center;
     box-sizing: border-box;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .footer-content {
@@ -894,4 +845,3 @@ main {
     font-weight: 500;
     letter-spacing: 1px;
 }
-

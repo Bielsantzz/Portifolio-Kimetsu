@@ -4,55 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Santos | Portifólio </title>
+    <title>Gabriel Santos | Portfólio</title>
     <link rel="stylesheet" href="portifolio.css">
 </head>
 
 <body>
-            
-        <header class="meu-cabecalho">
 
-            <nav class="barra-nav">
-                <a href="#inicio" class="link-logo">
-                    <img src="assets/Logo.png" alt="Logo" class="logo-img">
-                </a>
+    <header class="meu-cabecalho">
+        <nav class="barra-nav">
+            <a href="#inicio" class="link-logo">
+                <img src="assets/Logo.png" alt="Logo" class="logo-img">
+            </a>
 
-                <ul class="menu-lista">
-                    <li><a href="#inicio">INÍCIO</a></li>
-                    <li><a href="#sobre">SOBRE</a></li>
-                    <li><a href="#projetos">PROJETOS</a></li>
-                    <li><a href="#habilidades">HABILIDADES</a></li>
-                    <li><a href="#experiencias">EXPERIÊNCIA</a></li>
-                    <li><a href="#contato">CONTATO</a></li>
-                </ul>
-            </nav>
-        </header>
+            <ul class="menu-lista">
+                <li><a href="#inicio">INÍCIO</a></li>
+                <li><a href="#sobre">SOBRE</a></li>
+                <li><a href="#projetos">PROJETOS</a></li>
+                <li><a href="#habilidades">HABILIDADES</a></li>
+                <li><a href="#experiencias">EXPERIÊNCIA</a></li>
+                <li><a href="#contato">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
 
         <!-- SEÇÃO INÍCIO -->
         <section class="inicio" id="inicio">
-            <div class="moldura-foto">
-                <img src="" alt="Minha foto" class="minha-foto">
+            <figure class="moldura-foto">
+                <img src="assets/minha-foto.png" alt="Minha foto" class="minha-foto">
                 <img src="assets/moldura_img.png" alt="Moldura decorativa" class="moldura">
-                <img src="assets/respiracao_agua.png" alt="respiração da agua" class="efeito-agua">
-            </div>
+            </figure>
+            
+            <img src="assets/respiracao_agua.png" alt="Respiração da água" class="efeito-agua">
+            <img src="assets/respiracao_trovao.png" alt="Respiração do Trovão" class="efeito-trovao">
             
             <div class="intro">
                 <h1 class="titulo-principal">
-                    Olá eu sou,<br> Gabriel Henrique!
+                    Olá, eu sou,<br> Gabriel Henrique!
                 </h1>
                 <p class="cargo">Web Developer | Frontend - UI/UX</p>
                 
-                <a href="" class="btn-cv">Baixar CV</a>
+                <a href="#contato" class="btn-cv">Baixar CV</a>
             </div>
         </section>
 
         <!-- SEÇÃO SOBRE -->
         <section class="sobre" id="sobre">
             <div class="espadas-fundo">
-                <img src="assets/inosuke_sword.png" alt="espada-esquerda" class="espada espada-esquerda">
-                <img src="assets/inosuke_sword2.png" alt="espada-direita" class="espada espada-direita">
+                <img src="assets/inosuke_sword.png" alt="Espada esquerda" class="espada espada-esquerda">
+                <img src="assets/inosuke_sword2.png" alt="Espada direita" class="espada espada-direita">
             </div>
  
             <h2>Sobre mim</h2>
@@ -87,7 +88,7 @@
                         <p>Gamificação em formato Visual Novel para ensinar conceitos básicos da Mecânica Automotiva de maneira mais interativa e dinâmica.</p>
                         <div class="tecnologias">
                             <span>Godot</span>
-                            <span>Skethbook</span>
+                            <span>Sketchbook</span>
                         </div>
                         <button class="status-btn privado">Finalizado (Privado)</button>
                     </div>
@@ -116,8 +117,8 @@
 
         <!-- HABILIDADES --> 
         <section class="skills-section" id="habilidades">
-            <img src="assets/kekkijutsu.png" alt="kekkijutsu Esquerdo" class="kekkijutsu-decor-left">
-            <img src="assets/kekkijutsu2.png" alt="kekkijutsu Direito" class="kekkijutsu-decor-right">
+            <img src="assets/kekkijutsu.png" alt="Kekkijutsu Esquerdo" class="kekkijutsu-decor-left">
+            <img src="assets/kekkijutsu2.png" alt="Kekkijutsu Direito" class="kekkijutsu-decor-right">
 
             <h2>Habilidades</h2>
             <button id="btn-toggle-skills" class="skills-toggle-btn">Ver Soft Skills</button>
@@ -142,7 +143,7 @@
                 <div class="skills-bloco hidden" id="bloco-soft">
                    <div class="skills-grid">
                        <div class="skill-item"><img src="assets/equipe.png" alt="Trabalho em Equipe"><span>Trabalho em Equipe</span></div>
-                       <div class="skill-item"><img src="assets/comunicacao.png" alt="Comunicação"><span>Comunicação</span></div>             
+                       <div class="skill-item"><img src="assets/comunicacao.png" alt="Comunicação"><span>Comunicação</span></div>            
                        <div class="skill-item"><img src="assets/resiliencia.png" alt="Resiliência"><span>Resiliência</span></div>
                        <div class="skill-item"><img src="assets/pensamento.png" alt="Pensamento"><span>Pensamento Crítico</span></div>
                    </div>
@@ -160,7 +161,7 @@
                         <div class="card-icon">💼</div>
                         <div class="card-info">
                             <h3>Aprendiz em Soluções Digitais</h3>
-                            <p class="empresa">Bosch </p>
+                            <p class="empresa">Bosch</p>
                             <span class="periodo">Fev/2025 - Jun/2026</span>
                         </div>
                     </div>
@@ -175,14 +176,13 @@
                     </div>
                 </div>
 
-
                 <div class="curriculo-coluna">
                     <h2>Formação</h2>
                     
                     <div class="curriculo-card">
                         <div class="card-icon">🎓</div>
                         <div class="card-info">
-                            <h3>Técnico em Eletrôeletronica</h3>
+                            <h3>Técnico em Eletroeletrônica</h3>
                             <p class="empresa">SENAI Roberto Mange</p>
                             <span class="periodo">Jan/2023 - Dez/2024</span>
                         </div>
@@ -196,7 +196,6 @@
                             <span class="periodo">Fev/2025 - Jun/2026</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -221,18 +220,16 @@
             </div>
         </section>
 
-
         <footer class="footer-section">
             <div class="footer-content">
                 <p>&copy; 2026 Gabriel Henrique | Todos os direitos reservados.</p>
-                <p class="footer-tema">Desenvolvido com foco e muita refêrencia de Demon Slayer 😉.</p>
+                <p class="footer-tema">Desenvolvido com foco e muita referência de Demon Slayer 😉.</p>
             </div>
         </footer>
 
-        <script src="portifolio.js"></script>
-
-
     </main>
+
+    <script src="portifolio.js"></script>
 </body>
 
 </html>
