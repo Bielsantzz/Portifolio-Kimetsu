@@ -49,8 +49,6 @@ body {
     width: 100%;
 }
 
-
-
 /* ==============================
    NAVBAR
 ================================= */
@@ -185,27 +183,7 @@ main {
     letter-spacing: 1px;
 }
 
-.btn-cv {
-    display: inline-block;
-    background: linear-gradient(135deg, #8a0000 0%, #1a0000 100%);
-    color: #ffffff;
-    padding: 12px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    border: 1px solid rgba(255, 0, 0, 0.4);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
 
-.btn-cv:hover {
-    background: linear-gradient(135deg, #b30000 0%, #2a0000 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(179, 0, 0, 0.5);
-    border-color: rgba(255, 0, 0, 0.7);
-}
 
 /* ==============================
    MOLDURA DA FOTO E EFEITOS
