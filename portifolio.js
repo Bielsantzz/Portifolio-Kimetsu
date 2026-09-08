@@ -1,3 +1,22 @@
+// --- MENU DE HÂMBURGUER (MOBILE) ---
+const menuToggle = document.getElementById('menu-toggle');
+const menuLista = document.getElementById('menu-lista');
+
+if (menuToggle && menuLista) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        menuLista.classList.toggle('active');
+    });
+
+    // Fecha o menu automaticamente ao clicar em qualquer link da lista
+    document.querySelectorAll('.menu-lista a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            menuLista.classList.remove('active');
+        });
+    });
+}
+
 // --- ANIMAÇÃO DE SCROLL (FADE-IN) ---
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -36,7 +55,7 @@ function trocarCard(cardSaindo, cardEntrando, direcao) {
         cardEntrando.classList.add('ativo');
         
         animando = false;
-    }, 600); // Aumentado para acompanhar a nova fluidez do CSS
+    }, 600);
 }
 
 if (setaDireita && setaEsquerda) {
@@ -62,31 +81,37 @@ const btnToggle = document.getElementById('btn-toggle-skills');
 const blocoHard = document.getElementById('bloco-hard');
 const blocoSoft = document.getElementById('bloco-soft');
 
+// Garante o estado inicial correto ao carregar a página
+if (blocoHard && blocoSoft) {
+    blocoHard.style.display = 'grid';
+    blocoSoft.style.display = 'none';
+}
+
 let alternandoSkills = false;
 
-btnToggle.addEventListener('click', () => {
-    if (alternandoSkills) return;
-    alternandoSkills = true;
+if (btnToggle && blocoHard && blocoSoft) {
+    btnToggle.addEventListener('click', () => {
+        if (alternandoSkills) return;
+        alternandoSkills = true;
 
-    const mostrandoHard = blocoHard.style.display !== 'none';
-    const saindo = mostrandoHard ? blocoHard : blocoSoft;
-    const entrando = mostrandoHard ? blocoSoft : blocoHard;
+        const mostrandoHard = blocoHard.style.display !== 'none';
+        const saindo = mostrandoHard ? blocoHard : blocoSoft;
+        const entrando = mostrandoHard ? blocoSoft : blocoHard;
 
-    // 1. Fade-out no elemento atual
-    saindo.style.opacity = '0';
-    saindo.style.transform = 'translateY(15px)';
+        saindo.style.opacity = '0';
+        saindo.style.transform = 'translateY(15px)';
 
-    // 2. Aguarda sumir para trocar o display e fazer Fade-in no novo
-    setTimeout(() => {
-        saindo.style.display = 'none';
-        
-        entrando.style.display = 'grid';
-        void entrando.offsetWidth; // Força renderização do navegador
-        
-        entrando.style.opacity = '1';
-        entrando.style.transform = 'translateY(0)';
-        
-        btnToggle.textContent = mostrandoHard ? 'Ver Hard Skills' : 'Ver Soft Skills';
-        alternandoSkills = false;
-    }, 350); // Tempo exato da transição do CSS
-});
+        setTimeout(() => {
+            saindo.style.display = 'none';
+            
+            entrando.style.display = 'grid';
+            void entrando.offsetWidth; 
+            
+            entrando.style.opacity = '1';
+            entrando.style.transform = 'translateY(0)';
+            
+            btnToggle.textContent = mostrandoHard ? 'Ver Hard Skills' : 'Ver Soft Skills';
+            alternandoSkills = false;
+        }, 350);
+    });
+}

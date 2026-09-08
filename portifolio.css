@@ -1,27 +1,17 @@
-/* ==============================
-   CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
-================================= */
-
-/* Fundo noturno e superfícies */
-
 :root{
-    --bg: #070d0a;                 /* Preto esverdeado bem profundo */
+    --bg: #070d0a;                 
     --surface: rgba(255, 255, 255, 0.03);
-    --ink: #f4f6f5;                 /* Branco suave para textos */
-    --muted: #81aa93;               /* Cinza esverdeado suave para subtítulos */
-    --line: rgba(27, 77, 62, 0.25);   /* Linhas sutis com toque verde */
+    --ink: #f4f6f5;                 
+    --muted: #81aa93;              
+    --line: rgba(27, 77, 62, 0.25);  
     
     /* A paleta verde oficial do Tanjiro e detalhes do Haori/Hinokami */
-    --haori-green: #1b4d3e;         /* Verde escuro clássico do haori */
-    --haori-dark: #0f2d24;          /* Verde profundo para sombras e fundos profundos */
-    --green-neon: #2ecc71;          /* Verde vibrante para destaques e elementos ativos */
-    --green-glow: rgba(46, 204, 113, 0.35); /* Brilho suave esmeralda */
-    
-    --sun-red: #cc2929;             /* Vermelho da Hinokami Kagura para detalhes e botões de destaque */
-    --sun-orange: #e65c00;          /* Laranja intenso das chamas */
-    
+    --haori-green: #1b4d3e;        
+    --haori-dark: #0f2d24;         
+    --green-neon: #2ecc71;         
+    --green-glow: rgba(46, 204, 113, 0.35); 
     --shadow: 0 18px 48px rgba(0, 0, 0, 0.8);
-    --glow: rgba(46, 204, 113, 0.25); /* Brilho padrão harmonizado com o verde */
+    --glow: rgba(46, 204, 113, 0.25);
 }
 
 
@@ -33,6 +23,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+}
+
+main{
+    position: relative;
+    overflow-x: hidden;
 }
 
 html {
@@ -53,6 +48,8 @@ body {
     color: var(--ink);
     width: 100%;
 }
+
+
 
 /* ==============================
    NAVBAR
@@ -108,7 +105,7 @@ body {
 }
 
 .menu-lista li a {
-    color: var(--muted);
+    color: var(--green-neon);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
@@ -182,7 +179,7 @@ main {
 
 .inicio p.cargo {
     font-size: 1.4rem;
-    color: var(--muted);
+    color: #ffff;
     margin-bottom: 25px;
     text-align: left;
     letter-spacing: 1px;
@@ -228,8 +225,8 @@ main {
 }
 
 .minha-foto {
-    width: 220px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
@@ -305,7 +302,7 @@ main {
     text-align: center;
     position: relative;
     z-index: 2;
-    color: var(--haori-green);
+    color: var(--muted);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
     margin-bottom: 10px;
 }
@@ -366,10 +363,7 @@ main {
 
 .projetos h2 {
     font-size: 2.2rem;
-    color: var(--ink);
-    background: linear-gradient(135deg, var(--green-neon)0%, var(--haori-green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--muted);
     margin-bottom: 40px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -390,7 +384,7 @@ main {
 .projeto-card {
     width: 100%;
     height: 500px;
-    max-width: 850px;
+    max-width: 2050px;
     background: var(--haori-dark);
     border: 3px solid #1c4d30; 
     border-radius: 20px;
@@ -498,9 +492,9 @@ main {
 }
 
 .status-btn.privado {
-    background: var(--haori-dark);
+    background: var(--haori-green);
     color: var(--muted);
-    border: 2px solid var(--line);
+    border: 2px solid var(--green-neon);
     cursor: default;
 }
 
@@ -545,40 +539,50 @@ main {
 
 .skills-section {
     position: relative;
-    padding: 80px 20px;
+    width: 100%;
+    max-width: none;
+    padding: 100px 20px 160px 20px;
     box-sizing: border-box;
     text-align: center;
+    overflow: hidden;
 }
 
 .skills-section h2 {
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    color: var(--muted);
+    margin-bottom: 25px;
+    font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 1;
+    position: relative;
 }
 
 .skills-toggle-btn {
-    background-color: #1e1e24;
-    color: #38bdf8;
-    border: 2px solid #38bdf8;
+    background-color: var(--haori-dark);
+    color: var(--ink);
+    border: 2px solid var(--line);
     padding: 10px 25px;
     font-size: 1rem;
     font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     transition: all 0.3s ease;
     z-index: 1;
     position: relative;
+    box-shadow: var(--shadow);
 }
 
 .skills-toggle-btn:hover {
-    background-color: #a81c4f;
-    border-color: #ff176cad;
+    background-color:var(--haori-green);
+    border-color: var(--green-neon);
+    box-shadow: 0 0 15px var(--green-glow);
 }
 
 .skills-wrapper {
     position: relative;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     z-index: 1;
 }
@@ -609,54 +613,67 @@ main {
 }
 
 .skill-item {
-    background-color: #18181f;
-    border: 1px solid #9c22a0;
-    border-radius: 12px;
-    padding: 20px;
-    width: 130px;
+    background-color: var(--haori-dark);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 15px;
+    width: 145px;
+    min-height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    gap: 14px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
-    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2); /* Corrigido o espaço no rgba */
+    transform: translateY(-6px);
+    border-color: var(--green-neon);
+    box-shadow: 0 8px 25px var(--green-glow);
+    background-color: rgba(15, 45, 36, 0.8);
 }
 
 .skill-item img {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
+    transition: trasform 0.3s ease;
+}
+
+.skill-item:hover img {
+    transform: scale(1.1);
 }
 
 .skill-item span {
-    font-size: 0.95rem; /* Corrigido o espaço no rem */
+    font-size: 0.9rem; 
     font-weight: 600;
-    color: #e2e8f0;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1.3;
 }
 
-/* Imagens decorativas de fundo (Kekkijutsu) */
-.kekkijutsu-decor-left,
-.kekkijutsu-decor-right {
+.hinokami-decor-left,
+.hinokami-decor-right {
     position: absolute;
-    top: 70%;
-    transform: translateY(-50%);
-    width: 180px;
-    opacity: 0.7;
+    bottom: 10px;
+    top: auto;
+    width: 300px;
+    opacity: 0.5;
     pointer-events: none;
     z-index: 0;
 }
 
-.kekkijutsu-decor-left {
-    left: 10px;
+.hinokami-decor-left {
+    left: 0;             
+    transform: scaleX(-1);
 }
 
-.kekkijutsu-decor-right {
-    right: 5px;
+.hinokami-decor-right {
+    right: 0;            
+    transform: none;
 }
 
 /* ==================================
@@ -666,14 +683,14 @@ main {
 .curriculo-section {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 40px auto 0 auto; 
     padding: 100px 20px 80px 20px;
     box-sizing: border-box;
 }
 
 .curriculo-section h2 {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: var(--muted);
     margin-bottom: 50px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -694,19 +711,19 @@ main {
 }
 
 .curriculo-card {
-    background: #000000;
-    border: 3px solid rgba(121, 98, 27, 0.67);
+    background: var(--haori-dark);
+    border: 3px solid var(--haori-green);
     border-radius: 15px;
     padding: 25px;
     display: flex;
     align-items: flex-start;
     gap: 20px;
     transition: 0.3s ease;
-    box-shadow: 0 10px 25px rgba(182, 138, 8, 0.24);
+    box-shadow: 0 10px 25px var(--haori-green);
 }
 
 .curriculo-card:hover {
-    border-color: #ffbf00;
+    border-color: var(--muted);
     transform: translateY(-3px);
 }
 
@@ -733,7 +750,7 @@ main {
 }
 
 .card-info .empresa {
-    color: #f7bb08;
+    color: var(--ink);
     font-size: 1rem;
     font-weight: 500;
 }
@@ -750,16 +767,17 @@ main {
 
 .contato-section {
     width: 100%;
-    max-width: 700px;
+    max-width: none;
     margin: 60px auto 0 auto; 
-    padding: 10px 20px;
+    padding: 10px 20px 60px 20px;
     box-sizing: border-box;
     text-align: center;
+    position: relative;
 }
 
 .contato-section h2 {
     font-size: 3rem;
-    color: #ffffff;
+    color: var(--muted);
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -780,8 +798,8 @@ main {
 }
 
 .contato-card-social {
-    background: #18181b;
-    border: 2px solid #3f3f46;
+    background: var(--haori-dark);
+    border: 2px solid var(--green-glow);
     border-radius: 15px;
     padding: 25px 35px;
     display: flex;
@@ -795,9 +813,9 @@ main {
 }
 
 .contato-card-social:hover {
-    border-color: #dc2626;
+    border-color: var(--green-neon);
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.2);
+    box-shadow: 0 15px 35px var(--muted);
 }
 
 .contato-card-social img {
@@ -807,7 +825,7 @@ main {
 }
 
 .contato-card-social span {
-    color: #ffffff;
+    color: var(--ink);
     font-size: 1rem;
     font-weight: 600;
 }
@@ -818,8 +836,8 @@ main {
 
 .footer-section {
     width: 100%;
-    background-color: #000000;
-    border-top: 2px solid #3f3f46;
+    background-color: var(--bg);
+    border-top: 2px solid var(--haori-green);
     padding: 30px 20px;
     text-align: center;
     box-sizing: border-box;
@@ -844,4 +862,234 @@ main {
     font-size: 0.85rem !important;
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+/* ==============================
+   DECORAÇÃO FINAL
+================================= */
+
+.kekkijutsu-decor-left,
+.kekkijutsu-decor-right {
+    position: absolute;
+    bottom: -60px;         
+    top: auto;
+    transform: none;
+    width: 200px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.kekkijutsu-decor-left {
+    left: 0;               
+}
+.kekkijutsu-decor-right {
+    right: 0;              
+}
+
+/* ==============================
+   RESPONSIVIDADE GERAL (TABLETS E CELULARES)
+================================= */
+
+/* Estilos do Menu Hambúrguer (Oculto no Desktop) */
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-hamburguer .linha {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--green-neon);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Telas menores que 900px (Tablets e Celulares) */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .barra-nav {
+        padding: 0 20px;
+    }
+
+    .menu-lista {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: rgba(7, 13, 10, 0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Classe ativada pelo JavaScript */
+    .menu-lista.active {
+        right: 0;
+    }
+
+    /* Animação do ícone virando X */
+    .menu-hamburguer.active .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-hamburguer.active .linha:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburguer.active .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Seção Início */
+    .inicio {
+        flex-direction: column-reverse;
+        gap: 30px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .inicio h1.titulo-principal,
+    .inicio p.cargo {
+        text-align: center;
+    }
+
+    .inicio h1.titulo-principal {
+        font-size: 2.2rem;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Oculta imagens decorativas e pesadas no mobile */
+    .efeito-agua, 
+    .efeito-trovao, 
+    .espadas-fundo, 
+    .hinokami-decor-left, 
+    .hinokami-decor-right, 
+    .kekkijutsu-decor-left, 
+    .kekkijutsu-decor-right {
+        display: none !important;
+    }
+
+    /* Sobre Mim */
+    .sobre-conteudo p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Projetos e Carrossel */
+    .carrossel {
+        width: 100%;
+        padding: 0 10px;
+        gap: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Projetos e Carrossel */
+    .projeto-card {
+        max-width: 92% !important;
+        max-width: 100% !important;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .projeto-imagem {
+        width: 100%;
+        height: 160px;
+        border-right: none;
+        border-bottom: 2px solid var(--line);
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .projeto-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projeto-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .seta {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        position: absolute;
+        z-index: 20;
+    }
+
+    .seta-esquerda {
+        left: 2px;
+    }
+
+    .seta-direita {
+        right: 2px;
+    }
+
+    .skills-grid {
+        gap: 12px;
+    }
+
+    .skill-item {
+        width: 110px;
+        min-height: 110px;
+        padding: 15px 10px;
+    }
+
+    /* Currículo e Contatos */
+    .curriculo-container {
+        grid-template-columns: 1fr;
+        justify-items: center; /* Centraliza os cards de currículo na coluna */
+    }
+
+    /* Padroniza o tamanho e largura dos cards de formação igual aos de contato */
+    .curriculo-card {
+        width: 100% !important;
+        max-width: 280px !important; /* Mesma largura máxima dos cards de contato */
+        box-sizing: border-box;
+    }
+
+    .contato-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .contato-card-social {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Monitores grandes (acima de 1400px) */
+@media (min-width: 1400px) {
+    .barra-nav, .carrossel, .curriculo-section {
+        max-width: 1400px;
+    }
+    
+    .inicio {
+        gap: 12vw;
+    }
 }
