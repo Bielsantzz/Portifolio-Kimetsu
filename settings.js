@@ -8,7 +8,7 @@ if (menuToggle && menuLista) {
         menuLista.classList.toggle('active');
     });
 
-    // Fecha o menu automaticamente ao clicar em qualquer link da lista
+
     document.querySelectorAll('.menu-lista a').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
@@ -81,7 +81,7 @@ const btnToggle = document.getElementById('btn-toggle-skills');
 const blocoHard = document.getElementById('bloco-hard');
 const blocoSoft = document.getElementById('bloco-soft');
 
-// Garante o estado inicial correto ao carregar a página
+
 if (blocoHard && blocoSoft) {
     blocoHard.style.display = 'grid';
     blocoSoft.style.display = 'none';

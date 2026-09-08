@@ -5,7 +5,6 @@
     --muted: #81aa93;              
     --line: rgba(27, 77, 62, 0.25);  
     
-    /* A paleta verde oficial do Tanjiro e detalhes do Haori/Hinokami */
     --haori-green: #1b4d3e;        
     --haori-dark: #0f2d24;         
     --green-neon: #2ecc71;         
@@ -183,8 +182,6 @@ main {
     letter-spacing: 1px;
 }
 
-
-
 /* ==============================
    MOLDURA DA FOTO E EFEITOS
 ================================= */
@@ -248,8 +245,6 @@ main {
     pointer-events: none;
     opacity: 0.3;   
 }
-
-
 
 
 @keyframes surgirDaSombra {
@@ -1039,13 +1034,12 @@ main {
     /* Currículo e Contatos */
     .curriculo-container {
         grid-template-columns: 1fr;
-        justify-items: center; /* Centraliza os cards de currículo na coluna */
+        justify-items: center; 
     }
 
-    /* Padroniza o tamanho e largura dos cards de formação igual aos de contato */
     .curriculo-card {
         width: 100% !important;
-        max-width: 280px !important; /* Mesma largura máxima dos cards de contato */
+        max-width: 280px !important;
         box-sizing: border-box;
     }
 
